@@ -7,6 +7,8 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { View } from 'react-native';
+import { styles } from '@/constants/App.style';
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -37,9 +39,12 @@ export default function TabLayout() {
       <Tabs.Screen
         name="add"
         options={{
-          title: 'Add',
+          title: '',
           tabBarIcon: ({ color, focused }) => (
-            <FontAwesome6 name={focused ? "add" : "add"} size={28} color={color} />
+            <View style={styles.addBtn}>
+
+              <FontAwesome6 name={focused ? "add" : "add"} size={30} color={"#fff"} />
+            </View>
           ),
         }}
       />
@@ -48,7 +53,10 @@ export default function TabLayout() {
         options={{
           title: 'Like',
           tabBarIcon: ({ color, focused }) => (
-            <FontAwesome name={focused ? "heart" : "heart-o"} size={28} color={color} />
+            
+
+              <FontAwesome name={focused ? "heart" : "heart-o"} size={28} color={color} />
+            
           ),
         }}
       />
