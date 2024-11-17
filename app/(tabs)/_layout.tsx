@@ -52,6 +52,15 @@ export default function TabLayout() {
           ),
         }}
       />
+        <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color, focused }) => (
+            <FontAwesome name={focused ? "user" : "user-o"} size={28} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
